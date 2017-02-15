@@ -1,22 +1,97 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="zipAddress" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="郵便番号を入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bq8-lA-bNw">
+                                <rect key="frame" x="26" y="60" width="323" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                <connections>
+                                    <action selector="tapReturn" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="7bV-r9-lUa"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lI1-yW-ySG">
+                                <rect key="frame" x="158" y="130" width="60" height="30"/>
+                                <state key="normal" title="住所検索"/>
+                                <connections>
+                                    <action selector="tapSearch" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kj5-lI-Y15"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prefecture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X19-QP-rML">
+                                <rect key="frame" x="26" y="190" width="81" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYo-m9-1PX">
+                                <rect key="frame" x="26" y="231" width="323" height="21"/>
+                                <color key="backgroundColor" red="0.19064804911613464" green="0.60453057289123535" blue="0.98530632257461548" alpha="0.21344288793103447" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Qnv-Q8-4km"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yz2-ct-JzE">
+                                <rect key="frame" x="26" y="272" width="63" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbQ-V6-MkI">
+                                <rect key="frame" x="26" y="313" width="313" height="25"/>
+                                <color key="backgroundColor" red="0.19064804911613464" green="0.60453057289123535" blue="0.98530632257461548" alpha="0.21344288793103447" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="V54-KK-Dda"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="PYo-m9-1PX" secondAttribute="trailing" constant="10" id="14p-Jk-Mha"/>
+                            <constraint firstItem="Bq8-lA-bNw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4KZ-HX-TAJ"/>
+                            <constraint firstItem="lI1-yW-ySG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7hs-6G-QIr"/>
+                            <constraint firstItem="X19-QP-rML" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="9XX-Ks-2lT"/>
+                            <constraint firstItem="Bq8-lA-bNw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="CUT-Vk-hJZ"/>
+                            <constraint firstItem="X19-QP-rML" firstAttribute="top" secondItem="Bq8-lA-bNw" secondAttribute="bottom" constant="100" id="MAn-yT-QSD"/>
+                            <constraint firstItem="PYo-m9-1PX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="Oiu-Ur-bEt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Bq8-lA-bNw" secondAttribute="trailing" constant="10" id="Uzi-au-Sh5"/>
+                            <constraint firstItem="Bq8-lA-bNw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="h2X-6Z-YBG"/>
+                            <constraint firstItem="yz2-ct-JzE" firstAttribute="top" secondItem="PYo-m9-1PX" secondAttribute="bottom" constant="20" id="jtw-dm-Im7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SbQ-V6-MkI" secondAttribute="trailing" constant="20" id="kAy-Tf-RQX"/>
+                            <constraint firstItem="SbQ-V6-MkI" firstAttribute="top" secondItem="yz2-ct-JzE" secondAttribute="bottom" constant="20" id="lT3-h1-gsQ"/>
+                            <constraint firstItem="lI1-yW-ySG" firstAttribute="top" secondItem="Bq8-lA-bNw" secondAttribute="bottom" constant="40" id="wA3-BH-WJl"/>
+                            <constraint firstItem="yz2-ct-JzE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="wYe-Mv-zZT"/>
+                            <constraint firstItem="SbQ-V6-MkI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="ygJ-ya-LkG"/>
+                            <constraint firstItem="PYo-m9-1PX" firstAttribute="top" secondItem="X19-QP-rML" secondAttribute="bottom" constant="20" id="zDY-NJ-hxa"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="addressLabel" destination="SbQ-V6-MkI" id="u7w-QK-uCu"/>
+                        <outlet property="prefLabel" destination="PYo-m9-1PX" id="eYF-R2-bDg"/>
+                        <outlet property="zipTextField" destination="Bq8-lA-bNw" id="DNc-hZ-hTm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
